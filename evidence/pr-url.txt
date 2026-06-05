@@ -1,0 +1,3 @@
+REPLACE_WITH_PR_URL
+# Pega aquí la URL del pull request donde es visible el comentario del plan.
+# Ejemplo: https://github.com/Esaban17/oyd-exercise-72/pull/1

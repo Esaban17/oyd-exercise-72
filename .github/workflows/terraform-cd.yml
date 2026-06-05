@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main]
 
+# Por defecto solo lectura; el job terraform-plan eleva a pull-requests: write
+# para poder postear el comentario del plan con github-script.
+permissions:
+  contents: read
+
 jobs:
   # ---------------------------------------------------------------------------
   # PR validation — three independent jobs, each reporting its own status check
@@ -39,6 +44,9 @@ jobs:
   terraform-plan:
     name: terraform-plan
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     defaults:
       run:
         working-directory: infra
